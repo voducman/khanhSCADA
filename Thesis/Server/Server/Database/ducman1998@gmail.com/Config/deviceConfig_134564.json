@@ -1,0 +1,40 @@
+{
+    "deviceName": "Pump",
+    "deviceID": "134564",
+    "longitude": "10.760599",
+    "latitude": "106.661966",
+    "period": 50000,
+    "PLCs": [
+        {
+            "name": "S7_1500",
+            "protocol": "S7-connection",
+            "ipAddress": "497 Hòa Hảo, phường 7, quận 10, HCM",
+            "variables": [
+                {
+                    "name": "water_level",
+                    "dataType": "uInt",
+                    "plc": "S7_1500",
+                    "address": "KTX BK",
+                    "access": "read/write",
+                    "unit": "Meter",
+                    "isAlarm": false,
+                    "alarmType": null,
+                    "parameters": {
+                        "lolo": null,
+                        "lo": null,
+                        "hi": null,
+                        "hihi": null,
+                        "deadband": null
+                    },
+                    "isHistory": true
+                }
+            ]
+        }
+    ],
+    "user": "ducman1998@gmail.com",
+    "creationTime": "2019-09-08 00:24:21",
+    "lastActive": "",
+    "published": false,
+    "status": false,
+    "fileName": "deviceConfig_134564.json"
+}

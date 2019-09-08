@@ -1,0 +1,65 @@
+{
+    "deviceName": "testDevice",
+    "deviceID": "1234567890",
+    "longitude": "",
+    "latitude": "",
+    "period": 5000,
+    "PLCs": [
+        {
+            "name": "PLC1",
+            "protocol": "S7-connection",
+            "ipAddress": "1",
+            "variables": [
+                {
+                    "name": "Bien12",
+                    "dataType": "Bool",
+                    "plc": "PLC1",
+                    "address": "12",
+                    "access": "read",
+                    "unit": "",
+                    "isAlarm": false,
+                    "alarmType": null,
+                    "parameters": {
+                        "lolo": null,
+                        "lo": null,
+                        "hi": null,
+                        "hihi": null,
+                        "deadband": null
+                    },
+                    "isHistory": false
+                }
+            ]
+        },
+        {
+            "name": "PLC4",
+            "protocol": "S7-connection",
+            "ipAddress": "4",
+            "variables": [
+                {
+                    "name": "Bien42",
+                    "dataType": "Bool",
+                    "plc": "PLC4",
+                    "address": "42",
+                    "access": "read",
+                    "unit": "",
+                    "isAlarm": false,
+                    "alarmType": null,
+                    "parameters": {
+                        "lolo": null,
+                        "lo": null,
+                        "hi": null,
+                        "hihi": null,
+                        "deadband": null
+                    },
+                    "isHistory": false
+                }
+            ]
+        }
+    ],
+    "user": "nmkhanhbk@gmail.com",
+    "creationTime": "5/3/2019, 1:37:14 AM",
+    "lastActive": "",
+    "published": false,
+    "status": false,
+    "fileName": "deviceConfig_1234567890.json"
+}

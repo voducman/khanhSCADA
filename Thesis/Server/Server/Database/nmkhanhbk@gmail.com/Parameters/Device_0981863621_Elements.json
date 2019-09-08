@@ -1,0 +1,794 @@
+[
+    {
+        "type": "svg",
+        "id": "SvgjsLine1008",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsPolyline1089",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsEllipse1422",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsCircle1423",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsRect1424",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsRect1425",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsPolygon1426",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text0",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "img",
+        "id": "img1",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue2",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "format",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button3",
+        "properties": [
+            {
+                "name": "command",
+                "value": ""
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "switch",
+        "id": "switch4",
+        "properties": [
+            {
+                "name": "onCommand",
+                "value": ""
+            },
+            {
+                "name": "offCommand",
+                "value": ""
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "input",
+        "id": "input5",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "slider",
+        "id": "slider6",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": ""
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": ""
+            },
+            {
+                "name": "isMinTag",
+                "value": ""
+            },
+            {
+                "name": "isMaxTag",
+                "value": ""
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "verticalslider",
+        "id": "verticalSlider7",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": "0"
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": "100"
+            },
+            {
+                "name": "isMinTag",
+                "value": ""
+            },
+            {
+                "name": "isMaxTag",
+                "value": ""
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "progressbar",
+        "id": "progressbar8",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": ""
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": ""
+            },
+            {
+                "name": "isMinTag",
+                "value": ""
+            },
+            {
+                "name": "isMaxTag",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "isHideLabel",
+                "value": ""
+            },
+            {
+                "name": "isRawValue",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "verticalprogressbar",
+        "id": "verticalProgressbar9",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": ""
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": ""
+            },
+            {
+                "name": "isMinTag",
+                "value": ""
+            },
+            {
+                "name": "isMaxTag",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "isHideLabel",
+                "value": ""
+            },
+            {
+                "name": "isRawValue",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "checkbox",
+        "id": "checkbox10",
+        "properties": [
+            {
+                "name": "checkedCommand",
+                "value": ""
+            },
+            {
+                "name": "unCheckedCommand",
+                "value": ""
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet11",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": ""
+            },
+            {
+                "name": "onSymbol",
+                "value": ""
+            },
+            {
+                "name": "offSymbol",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "chart",
+        "id": "chart12",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "xLabel",
+                "value": "Time"
+            },
+            {
+                "name": "yLabel",
+                "value": "Value"
+            }
+        ]
+    },
+    {
+        "type": "gauge",
+        "id": "gauge14",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "type",
+                "value": ""
+            },
+            {
+                "name": "gaugeColor",
+                "value": ""
+            },
+            {
+                "name": "levelColor",
+                "value": ""
+            },
+            {
+                "name": "fontColor",
+                "value": ""
+            },
+            {
+                "name": "gaugeWidth",
+                "value": ""
+            },
+            {
+                "name": "usePointer",
+                "value": ""
+            },
+            {
+                "name": "pointerColor",
+                "value": ""
+            },
+            {
+                "name": "format",
+                "value": ""
+            },
+            {
+                "name": "label",
+                "value": ""
+            },
+            {
+                "name": "min",
+                "value": ""
+            },
+            {
+                "name": "max",
+                "value": ""
+            },
+            {
+                "name": "title",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "chart",
+        "id": "chart15",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "Demo1"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "xLabel",
+                "value": "Time"
+            },
+            {
+                "name": "yLabel",
+                "value": "Value"
+            }
+        ]
+    },
+    {
+        "type": "chart",
+        "id": "chart16",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "Demo2"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "xLabel",
+                "value": "Time"
+            },
+            {
+                "name": "yLabel",
+                "value": "Value"
+            }
+        ]
+    },
+    {
+        "type": "gauge",
+        "id": "gauge17",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "type",
+                "value": ""
+            },
+            {
+                "name": "gaugeColor",
+                "value": ""
+            },
+            {
+                "name": "levelColor",
+                "value": ""
+            },
+            {
+                "name": "fontColor",
+                "value": ""
+            },
+            {
+                "name": "gaugeWidth",
+                "value": ""
+            },
+            {
+                "name": "usePointer",
+                "value": ""
+            },
+            {
+                "name": "pointerColor",
+                "value": ""
+            },
+            {
+                "name": "format",
+                "value": ""
+            },
+            {
+                "name": "label",
+                "value": ""
+            },
+            {
+                "name": "min",
+                "value": ""
+            },
+            {
+                "name": "max",
+                "value": ""
+            },
+            {
+                "name": "title",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsLine1010",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsLine1099",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsLine1104",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsLine1109",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsLine1114",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsEllipse1119",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsCircle1120",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsEllipse1121",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsRect1122",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsRect1123",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsPolygon1124",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsPolyline1346",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text0",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "img",
+        "id": "img1",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue2",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "format",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue3",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "format",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "switch",
+        "id": "switch4",
+        "properties": [
+            {
+                "name": "onCommand",
+                "value": ""
+            },
+            {
+                "name": "offCommand",
+                "value": ""
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "progressbar",
+        "id": "progressbar5",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": ""
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": ""
+            },
+            {
+                "name": "isMinTag",
+                "value": ""
+            },
+            {
+                "name": "isMaxTag",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "isHideLabel",
+                "value": ""
+            },
+            {
+                "name": "isRawValue",
+                "value": ""
+            }
+        ]
+    }
+]

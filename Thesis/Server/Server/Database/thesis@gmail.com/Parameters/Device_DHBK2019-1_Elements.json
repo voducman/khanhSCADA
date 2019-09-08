@@ -1,0 +1,534 @@
+[
+    {
+        "type": "img",
+        "id": "img0",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet1",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "TankController_FillValve_1"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Valve/Valve_049.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Valve/Valve_050.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet2",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "TankController_StartLight_1"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Light/Light_008.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Light/Light_007.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet3",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "TankController_StopLight_1"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Light/Light_010.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Light/Light_007.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet4",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "TankController_DischargeValve_1"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Valve/Valve_049.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Valve/Valve_050.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "img",
+        "id": "img5",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "img",
+        "id": "img6",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "img",
+        "id": "img7",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "img",
+        "id": "img8",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "img",
+        "id": "img9",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "img",
+        "id": "img10",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "verticalprogressbar",
+        "id": "verticalProgressbar11",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "TankController_Level_1"
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": "0.0"
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": "3.0"
+            },
+            {
+                "name": "isMinTag",
+                "value": false
+            },
+            {
+                "name": "isMaxTag",
+                "value": false
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "isHideLabel",
+                "value": false
+            },
+            {
+                "name": "isRawValue",
+                "value": true
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text12",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button13",
+        "properties": [
+            {
+                "name": "command",
+                "value": "TankController_Start_1 = 1"
+            },
+            {
+                "name": "disableWhen",
+                "value": "TankController_StartLight_1"
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button14",
+        "properties": [
+            {
+                "name": "command",
+                "value": "TankController_Stop_1 = 1"
+            },
+            {
+                "name": "disableWhen",
+                "value": "TankController_StopLight_1"
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button15",
+        "properties": [
+            {
+                "name": "command",
+                "value": "TankController_SetMode_1 = 0"
+            },
+            {
+                "name": "disableWhen",
+                "value": "!TankController_Mode_1"
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button16",
+        "properties": [
+            {
+                "name": "command",
+                "value": "TankController_SetMode_1 = 1"
+            },
+            {
+                "name": "disableWhen",
+                "value": "TankController_Mode_1"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text17",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text18",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "TankController_Mode_1"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text19",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "!TankController_Mode_1"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text20",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text21",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text22",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "switch",
+        "id": "switch23",
+        "properties": [
+            {
+                "name": "onCommand",
+                "value": "TankController_Man_DIschargeValve_1 = 1"
+            },
+            {
+                "name": "offCommand",
+                "value": "TankController_Man_DIschargeValve_1 = 0"
+            },
+            {
+                "name": "disableWhen",
+                "value": "!TankController_Mode_1"
+            }
+        ]
+    },
+    {
+        "type": "switch",
+        "id": "switch24",
+        "properties": [
+            {
+                "name": "onCommand",
+                "value": "TankController_Man_FillValve_1 = 1"
+            },
+            {
+                "name": "offCommand",
+                "value": "TankController_Man_FillValve_1 = 0"
+            },
+            {
+                "name": "disableWhen",
+                "value": "!TankController_Mode_1"
+            }
+        ]
+    },
+    {
+        "type": "img",
+        "id": "img25",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text26",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text27",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text28",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text29",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue30",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "TankController_DischargeFlow_1"
+            },
+            {
+                "name": "format",
+                "value": "3"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text31",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "gauge",
+        "id": "gauge32",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "TankController_Level_1"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "type",
+                "value": false
+            },
+            {
+                "name": "gaugeColor",
+                "value": "rgba(255,255,255,0.5)"
+            },
+            {
+                "name": "levelColor",
+                "value": [
+                    [
+                        "#0080ff"
+                    ]
+                ]
+            },
+            {
+                "name": "fontColor",
+                "value": "#000000"
+            },
+            {
+                "name": "gaugeWidth",
+                "value": "0.2"
+            },
+            {
+                "name": "usePointer",
+                "value": true
+            },
+            {
+                "name": "pointerColor",
+                "value": "#0080ff"
+            },
+            {
+                "name": "format",
+                "value": 2
+            },
+            {
+                "name": "label",
+                "value": "m"
+            },
+            {
+                "name": "min",
+                "value": 0
+            },
+            {
+                "name": "max",
+                "value": 3
+            },
+            {
+                "name": "title",
+                "value": "Tank Level"
+            }
+        ]
+    },
+    {
+        "type": "chart",
+        "id": "chart33",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "TankController_Level_1"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            },
+            {
+                "name": "xLabel",
+                "value": "Time"
+            },
+            {
+                "name": "yLabel",
+                "value": "Level (m)"
+            }
+        ]
+    }
+]

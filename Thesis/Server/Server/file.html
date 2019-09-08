@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+
+    <title>Published Page</title>
+
+</head>
+
+<body >
+    <!------------------------ MAIN PAGE ------------------------->
+    <div id="gauge" style="width:400px; height:300px">
+    </div>
+
+    <div id="item" style="width:300px; height:300px; background: green"></div>
+    <button id="btnUpdate">Update</button>
+    <button id="btnHide">Hide</button>
+    <button id="btnShow">Show</button>
+    
+
+    <!------------------------ SCRIPT ------------------------->
+    <!-- JQuery scripts -->
+    <script src="public/javascripts/jquery-3.3.1.min.js"></script>
+     <!-- Chart -->
+  <script src="public/javascripts/moment.js"></script>
+  <script src="public/javascripts/Chart.min.js"></script>
+  <script src="public/javascripts/hammer.js"></script>
+  <script src="public/javascripts/chartjs-plugin-zoom.js"></script>
+  <script src="public/javascripts/chartjs-plugin-streaming.min.js"></script>
+    <!-- Just Gauge -->
+    <script src="public/javascripts/raphael-2.1.4.min.js"></script>
+    <script src="public/javascripts/justgage.js"></script>
+    <!-- Bootstrap form helper script -->
+   
+    <!-- Context menu script -->
+    <!-- <script src="/javascripts/contextmenu.js"></script> -->
+    <!-- SVG script -->
+    <!-- Socket.io -->
+    <script src="public/javascripts/socket.io.js"></script>
+    <!-- My script -->
+    <script src="public/javascripts/Myscripts/publish.js"></script>
+    <script>
+       var gauge = new JustGage({
+        id: 'gauge',
+        value: 1200,
+        decimals: 2,
+        min: 0,
+        max: 3000,
+        //title : "",
+        // symbol: ' RPM',
+        label: 'RPM',
+        labelFontColor : 'red',
+        donut: true,
+        relativeGaugeSize: true,
+        valueFontColor: '#ff0000',
+        valueFontSize: '10px',
+        gaugeColor: 'rgba(255,255,255,0.15)',
+        levelColors: ['#00660a'],
+        pointer: true,
+        pointerOptions: {
+            toplength: 8,
+            bottomlength: -20,
+            bottomwidth: 6,
+            color: '#00800d'
+        },
+        gaugeWidthScale: 0.2,
+        counter: true,
+    });
+
+    $('#btnUpdate').click(function() {
+        console.log(gauge);
+        var oldConfig = JSON.parse(JSON.stringify(gauge.config));
+        oldConfig.label = 'Hello';
+        oldConfig.labelFontColor = 'black';
+        oldConfig.donut = false;
+        //var gauge = new JustGage(oldConfig);
+        $('#gauge').find('svg').remove();
+        var newGauge = new JustGage(oldConfig);
+    })
+
+    $('#btnHide').click(function() {
+        $('#item').hide();
+        var hiddens = $(':hidden');
+        console.log(hiddens);
+    });
+
+    $('#btnShow').click(function() {
+        $('#item').show();
+    })
+
+    </script>
+</body>
+
+</html>

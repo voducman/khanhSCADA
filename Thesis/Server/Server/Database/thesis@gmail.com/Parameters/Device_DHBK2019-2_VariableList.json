@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Controller_Start",
+        "value": null
+    },
+    {
+        "name": "Controller_Stop",
+        "value": null
+    },
+    {
+        "name": "Controller_StartLight",
+        "value": null
+    },
+    {
+        "name": "Controller_StopLight",
+        "value": null
+    },
+    {
+        "name": "Controller_BlueProduct",
+        "value": null
+    },
+    {
+        "name": "Controller_GreenProduct",
+        "value": null
+    },
+    {
+        "name": "Controller_OtherProduct",
+        "value": null
+    },
+    {
+        "name": "Controller_TotalRunningTime",
+        "value": null
+    },
+    {
+        "name": "Controller_EntryConveyor",
+        "value": null
+    },
+    {
+        "name": "Controller_ExitConveyor",
+        "value": null
+    },
+    {
+        "name": "Controller_MaintAlarm",
+        "value": null
+    },
+    {
+        "name": "Controller_ResetMaint",
+        "value": null
+    }
+]

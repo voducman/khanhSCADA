@@ -1,0 +1,40 @@
+{
+    "deviceName": "demo",
+    "deviceID": "123456",
+    "longitude": "",
+    "latitude": "",
+    "period": "10000",
+    "PLCs": [
+        {
+            "name": "PLC1",
+            "protocol": "S7-connection",
+            "ipAddress": "192.168.0.1",
+            "variables": [
+                {
+                    "name": "Speed",
+                    "dataType": "Double",
+                    "plc": "PLC1",
+                    "address": "MD100",
+                    "access": "read",
+                    "unit": "RPM",
+                    "isAlarm": false,
+                    "alarmType": null,
+                    "parameters": {
+                        "lolo": null,
+                        "lo": null,
+                        "hi": null,
+                        "hihi": null,
+                        "deadband": null
+                    },
+                    "isHistory": false
+                }
+            ]
+        }
+    ],
+    "user": "nmkhanhbk@gmail.com",
+    "creationTime": "5/24/2019, 2:11:40 PM",
+    "lastActive": "",
+    "published": false,
+    "status": false,
+    "fileName": "deviceConfig_123456.json"
+}

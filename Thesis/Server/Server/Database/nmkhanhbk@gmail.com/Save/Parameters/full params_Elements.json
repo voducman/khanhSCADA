@@ -1,0 +1,540 @@
+[
+    {
+        "type": "svg",
+        "id": "SvgjsLine1008",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsPolyline1167",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsEllipse1660",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsCircle1661",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsRect1662",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsRect1663",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsPolygon1723",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text0",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "img",
+        "id": "img1",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue2",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "format",
+                "value": "1"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button3",
+        "properties": [
+            {
+                "name": "command",
+                "value": "S7_1500_M0_0 = 1"
+            },
+            {
+                "name": "disableWhen",
+                "value": "S7_1500_MW2 > 2000"
+            }
+        ]
+    },
+    {
+        "type": "switch",
+        "id": "switch5",
+        "properties": [
+            {
+                "name": "onCommand",
+                "value": "S7_1500_MW2 = 0"
+            },
+            {
+                "name": "offCommand",
+                "value": "S7_1500_MW2 = 100"
+            },
+            {
+                "name": "disableWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "input",
+        "id": "input7",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "disableWhen",
+                "value": "S7_1500_MW2 > 2000"
+            }
+        ]
+    },
+    {
+        "type": "slider",
+        "id": "slider8",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": "0"
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": "3000"
+            },
+            {
+                "name": "isMinTag",
+                "value": false
+            },
+            {
+                "name": "isMaxTag",
+                "value": false
+            },
+            {
+                "name": "disableWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "verticalslider",
+        "id": "verticalSlider9",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": "0"
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": "3000"
+            },
+            {
+                "name": "isMinTag",
+                "value": false
+            },
+            {
+                "name": "isMaxTag",
+                "value": false
+            },
+            {
+                "name": "disableWhen",
+                "value": "S7_1500_M0_0"
+            }
+        ]
+    },
+    {
+        "type": "progressbar",
+        "id": "progressbar10",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": "0"
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": "3000"
+            },
+            {
+                "name": "isMinTag",
+                "value": false
+            },
+            {
+                "name": "isMaxTag",
+                "value": false
+            },
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            },
+            {
+                "name": "isHideLabel",
+                "value": false
+            },
+            {
+                "name": "isRawValue",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "verticalprogressbar",
+        "id": "verticalProgressbar11",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": "0"
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": "3000"
+            },
+            {
+                "name": "isMinTag",
+                "value": false
+            },
+            {
+                "name": "isMaxTag",
+                "value": false
+            },
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            },
+            {
+                "name": "isHideLabel",
+                "value": false
+            },
+            {
+                "name": "isRawValue",
+                "value": true
+            }
+        ]
+    },
+    {
+        "type": "checkbox",
+        "id": "checkbox12",
+        "properties": [
+            {
+                "name": "checkedCommand",
+                "value": "S7_1500_M0_0 = 1"
+            },
+            {
+                "name": "unCheckedCommand",
+                "value": "S7_1500_M0_0 = 0"
+            },
+            {
+                "name": "disableWhen",
+                "value": "S7_1500_MW2 > 2000"
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet13",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "S7_1500_M0_0"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Light/Light_026.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Light/Light_027.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_MW2 > 2000"
+            }
+        ]
+    },
+    {
+        "type": "chart",
+        "id": "chart14",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            },
+            {
+                "name": "xLabel",
+                "value": "Thoi gian"
+            },
+            {
+                "name": "yLabel",
+                "value": "Gia tri"
+            }
+        ]
+    },
+    {
+        "type": "gauge",
+        "id": "gauge15",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            },
+            {
+                "name": "type",
+                "value": false
+            },
+            {
+                "name": "gaugeColor",
+                "value": "rgba(255,255,255,0.5)"
+            },
+            {
+                "name": "levelColor",
+                "value": [
+                    [
+                        "#00660a"
+                    ]
+                ]
+            },
+            {
+                "name": "fontColor",
+                "value": "#000000"
+            },
+            {
+                "name": "gaugeWidth",
+                "value": "0.2"
+            },
+            {
+                "name": "usePointer",
+                "value": true
+            },
+            {
+                "name": "pointerColor",
+                "value": "#00800d"
+            },
+            {
+                "name": "format",
+                "value": 1
+            },
+            {
+                "name": "label",
+                "value": "RPM"
+            },
+            {
+                "name": "min",
+                "value": 0
+            },
+            {
+                "name": "max",
+                "value": 3000
+            },
+            {
+                "name": "title",
+                "value": "Speed"
+            }
+        ]
+    },
+    {
+        "type": "chart",
+        "id": "chart16",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            },
+            {
+                "name": "xLabel",
+                "value": "Time"
+            },
+            {
+                "name": "yLabel",
+                "value": "Value"
+            }
+        ]
+    },
+    {
+        "type": "gauge",
+        "id": "gauge17",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": "S7_1500_M0_0"
+            },
+            {
+                "name": "type",
+                "value": false
+            },
+            {
+                "name": "gaugeColor",
+                "value": "rgba(255,255,255,0.5)"
+            },
+            {
+                "name": "levelColor",
+                "value": [
+                    [
+                        "#00660a"
+                    ]
+                ]
+            },
+            {
+                "name": "fontColor",
+                "value": "#000000"
+            },
+            {
+                "name": "gaugeWidth",
+                "value": "0.2"
+            },
+            {
+                "name": "usePointer",
+                "value": true
+            },
+            {
+                "name": "pointerColor",
+                "value": "#00800d"
+            },
+            {
+                "name": "format",
+                "value": 2
+            },
+            {
+                "name": "label",
+                "value": "value"
+            },
+            {
+                "name": "min",
+                "value": 0
+            },
+            {
+                "name": "max",
+                "value": 3000
+            },
+            {
+                "name": "title",
+                "value": "Gauge"
+            }
+        ]
+    }
+]

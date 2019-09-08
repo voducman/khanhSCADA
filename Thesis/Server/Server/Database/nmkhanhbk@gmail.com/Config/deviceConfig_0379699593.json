@@ -1,0 +1,59 @@
+{
+    "deviceName": "Automation",
+    "deviceID": "0379699593",
+    "longitude": "106.629662",
+    "latitude": "10.823099",
+    "period": 5000,
+    "PLCs": [
+        {
+            "name": "PLC_1500",
+            "protocol": "S7-connection",
+            "ipAddress": "192.160.100.150",
+            "variables": [
+                {
+                    "name": "M0_2",
+                    "dataType": "Bool",
+                    "plc": "S7_1500",
+                    "address": "M0.2",
+                    "access": "read",
+                    "unit": "",
+                    "isAlarm": false,
+                    "alarmType": "0",
+                    "parameters": {
+                        "lolo": "",
+                        "lo": "",
+                        "hi": "",
+                        "hihi": "",
+                        "deadband": ""
+                    },
+                    "isHistory": false
+                },
+                {
+                    "name": "Speed",
+                    "dataType": "Double",
+                    "plc": "S7_1500",
+                    "address": "MD2",
+                    "access": "read",
+                    "unit": "RPM",
+                    "isAlarm": true,
+                    "alarmType": "1",
+                    "parameters": {
+                        "lolo": 100,
+                        "lo": 500,
+                        "hi": 1000,
+                        "hihi": 1500,
+                        "deadband": 20
+                    },
+                    "isHistory": false
+                }
+            ]
+        }
+    ],
+    "user": "nmkhanhbk@gmail.com",
+    "creationTime": "4/10/2019, 12:18:53 AM",
+    "lastActive": "",
+    "published": false,
+    "status": false,
+    "fileName": "deviceConfig_0379699593.json",
+    "link": "/published/nmkhanhbk@gmail.com/Device_0379699593_publish.ejs"
+}

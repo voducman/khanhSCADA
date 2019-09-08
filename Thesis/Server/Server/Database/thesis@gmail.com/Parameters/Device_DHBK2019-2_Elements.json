@@ -1,0 +1,336 @@
+[
+    {
+        "type": "symbolSet",
+        "id": "symbolSet0",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "Controller_EntryConveyor"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Conveyors/Conveyors_007.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Conveyors/Conveyors_006.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet1",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "Controller_ExitConveyor"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Conveyors/Conveyors_007.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Conveyors/Conveyors_006.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text2",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text3",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button4",
+        "properties": [
+            {
+                "name": "command",
+                "value": "Controller_Start = 1"
+            },
+            {
+                "name": "disableWhen",
+                "value": "Controller_StartLight"
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button5",
+        "properties": [
+            {
+                "name": "command",
+                "value": "Controller_Stop = 1"
+            },
+            {
+                "name": "disableWhen",
+                "value": "Controller_StopLight"
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button6",
+        "properties": [
+            {
+                "name": "command",
+                "value": "Controller_ResetMaint = 1"
+            },
+            {
+                "name": "disableWhen",
+                "value": "!Controller_MaintAlarm"
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet7",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "Controller_StartLight"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Light/Light_008.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Light/Light_007.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet8",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "Controller_StopLight"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Light/Light_010.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Light/Light_007.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet9",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "Controller_MaintAlarm"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Light/Light_009.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Light/Light_007.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text10",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text11",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text12",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue13",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "Controller_TotalRunningTime"
+            },
+            {
+                "name": "format",
+                "value": "0"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text14",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text15",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text16",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue17",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "Controller_BlueProduct"
+            },
+            {
+                "name": "format",
+                "value": "0"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue18",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "Controller_GreenProduct"
+            },
+            {
+                "name": "format",
+                "value": "0"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue19",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "Controller_OtherProduct"
+            },
+            {
+                "name": "format",
+                "value": "0"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsRect1012",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsRect1013",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "svg",
+        "id": "SvgjsRect1014",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    }
+]

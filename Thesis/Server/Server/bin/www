@@ -1,0 +1,463 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('server:server');
+var http = require('http');
+var fs = require('fs');
+var path = require('path');
+var recursive = require("recursive-readdir");
+var async = require('async');
+var mongoose = require('mongoose');
+var HTMLParser = require('node-html-parser');
+mongoose.connect('mongodb://localhost:27017/LuanVan2019DB', { useNewUrlParser: true });
+var alarmMongoose = require('../model/alarm');
+var historyMongoose = require('../model/history');
+
+var databasePath = '../Server/Database';
+var certificatePath = '../Server/public/certificate/mqtt_ca.crt';
+
+//MQTT VARIABLES
+let mqttHost = '127.0.0.1';
+let mqttPort = 1883;
+// let mqttHost = '45.124.94.180';
+// let mqttPort = 8883;
+let trustedCA = fs.readFileSync(certificatePath);
+let mqttOptions = {
+  host: mqttHost,
+  port: mqttPort,
+  rejectUnauthorized: false,
+  ca: trustedCA,
+  //protocol: 'mqtts'
+}
+let retainOption = {retain : true};
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+global.io = require('socket.io')(server);
+
+/* MQTT */
+var mqtt = require('mqtt');
+var mqttClient = mqtt.connect(mqttOptions);
+
+
+
+mqttClient.on('connect', function () {
+  console.log('Connected to MQTT broker');
+
+  mqttClient.subscribe('/+/status', function (err) {
+    if (err) console.log(err);
+    else console.log('Subscribed topic : ' + '/*/status');
+  });
+
+  mqttClient.subscribe('/+/tags', function (err) {
+    if (err) console.log(err);
+    else console.log('Subscribed topic : ' + '/*/tags');
+  });
+
+  mqttClient.subscribe('/+/alarm', function (err) {
+    if (err) console.log(err);
+    else console.log('Subscribed topic : ' + '/*/alarm');
+  });
+  
+});
+
+mqttClient.on('message', function (topic, message) {
+  if (topic.endsWith('status')) {
+    try {
+      var statusObject = JSON.parse(message.toString());
+      if (statusObject) {
+        console.log(statusObject.deviceID);
+        recursive(databasePath, function (err, files) {
+          if (err) console.log(err);
+          console.log(files);
+          for (var file of files) {
+            if (file.includes(statusObject.deviceID + '.json')) {
+              var filePath = file;
+              fs.readFile(filePath, function (err, data) {
+                if (err) console.log(err);
+                var object = JSON.parse(data);
+                object.status = statusObject.status;
+                object.lastActive = statusObject.timestamp;
+                //console.log(object);
+                fs.writeFile(filePath, JSON.stringify(object, null, 4), function (err) {
+                  if (err) console.log(err);
+                  else console.log('Write success in ' + filePath);
+                });
+              });
+              break;
+            }
+          }
+        });
+        io.emit('/' + statusObject.deviceID + '/status', message.toString());
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+
+  if (topic.endsWith('tags')) {
+    try {
+      var variableObj = JSON.parse(message.toString());
+      io.emit('/' + variableObj.deviceID + '/tag', message.toString());
+      if (variableObj.variables) {
+        variableObj.variables.forEach(function (_var) {
+          if (_var.isHistory) {
+            var historyModel = historyMongoose.createModel('Device_' + variableObj.deviceID + '_history');
+            var _newHistory = new historyModel({
+              tag: _var.tagName,
+              type: _var.dataType,
+              address: _var.address,
+              value: _var.value,
+              timestamp: _var.timestamp
+            });
+            historyMongoose.createNewHistory(_newHistory);
+          }
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+
+
+  }
+
+  if (topic.endsWith('alarm')) {
+    try {
+      var alarmObject = JSON.parse(message.toString());
+      console.log('Receive alarm object MQTT');
+      console.log(alarmObject);
+      io.emit('/' + alarmObject.deviceID + '/alarm', alarmObject);
+      //Save to mongo
+      var alarmModel = alarmMongoose.createModel('Device_' + alarmObject.deviceID + '_alarm');
+      var _newAlarm = new alarmModel({
+        source: alarmObject.source,
+        value: alarmObject.value,
+        message: alarmObject.message,
+        type: alarmObject.type,
+        state: alarmObject.state,
+        timestamp: alarmObject.timestamp,
+      });
+      alarmMongoose.createNewAlarm(_newAlarm);
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+});
+
+
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+io.on('connection', function (socket) {
+
+  socket.on('/reqDeviceConfig', function (user) {
+    var arrConfig = [];
+    var userFolder = path.resolve(databasePath, user, 'Config');
+    async.series([
+      function (callback) {
+        var fileList = fs.readdirSync(userFolder);
+        if (fileList.length > 0) {
+          fileList.forEach(function (file) {
+            if (path.extname(file) == '.json')
+              arrConfig.push(JSON.parse(fs.readFileSync(path.resolve(userFolder, file))))
+          });
+        }
+        callback();
+      }
+    ], function (err) {
+      if (err) console.log(err);
+      else socket.emit('/' + user + '/resDeviceConfig', arrConfig);
+    });
+  });
+
+  socket.on('deviceConfig', function (data) {
+    console.log(data);
+    if (data) {
+      try {
+        var receivedObject = JSON.parse(data);
+        if (receivedObject) {
+          receivedObject.fileName = 'deviceConfig_' + receivedObject.deviceID + '.json';
+          receivedObjectJSON = JSON.stringify(receivedObject, null, 4);
+          var filePath = path.resolve(databasePath, receivedObject.user, 'Config', 'deviceConfig_' + receivedObject.deviceID + '.json');
+
+          fs.writeFile(filePath, receivedObjectJSON, function (err) {
+            if (err) console.log(err);
+            else console.log('Succeed');
+          });
+
+          //Send configuration to gateway via MQTT
+          mqttClient.publish('/' + receivedObject.deviceID + '/config', receivedObjectJSON, retainOption);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  });
+
+  socket.on('deleteDevice', function (filePath) {
+    var fileBase = path.parse(filePath).base;
+    var deviceID = fileBase.replace('deviceConfig_', '').replace('.json', '');
+    var mqttResetTopic = '/' + deviceID + '/reset';
+    console.log(mqttResetTopic);
+    mqttClient.publish(mqttResetTopic, JSON.stringify({ CMD: true }, null, 4), retainOption);
+
+
+    fs.unlink(path.resolve(databasePath, filePath), function (err) {
+      if (err) console.log(err)
+      else socket.emit('deleteSuccess', 1);
+    });
+  });
+
+  //Edit config
+  socket.on('/editConfig', function(editObject) {
+    var configFilePath = path.resolve(databasePath, editObject.user, 'Config', editObject.fileName);
+    var configObject = JSON.parse(fs.readFileSync(configFilePath));
+    switch(editObject.type) {
+      case 0 : { //Edit gateway
+        editObject.properties.forEach(function(proper) {
+          configObject[proper.name] = proper.value;
+        });
+        console.log('Edit gateway successfully');
+        break;
+      }
+      case 1 : {  //Edit PLC
+        editObject.properties.forEach(function(proper) {
+          configObject.PLCs[editObject.plcIndex][proper.name] = proper.value;
+        });
+        console.log('Edit PLC successfully');
+        break;
+      }
+      case 2 : {  //Edit variable
+        editObject.properties.forEach(function(proper) {
+          if (proper.name != 'hihi' && proper.name != 'hi' && proper.name != 'lo' && proper.name != 'lolo' && proper.name != 'deadband') {
+            configObject.PLCs[editObject.plcIndex].variables[editObject.variableIndex][proper.name] = proper.value;
+          } else {
+            configObject.PLCs[editObject.plcIndex].variables[editObject.variableIndex].parameters[proper.name] = proper.value;
+          }
+        });
+        console.log('Edit variable successfully');
+        break;
+      }
+    }
+    fs.writeFileSync(configFilePath, JSON.stringify(configObject, null, 4));
+    
+    //Send new socket to client
+    var arrConfig = [];
+    var userFolder = path.resolve(databasePath, editObject.user, 'Config');
+    async.series([
+      function (callback) {
+        var fileList = fs.readdirSync(userFolder);
+        if (fileList.length > 0) {
+          fileList.forEach(function (file) {
+            if (path.extname(file) == '.json')
+              arrConfig.push(JSON.parse(fs.readFileSync(path.resolve(userFolder, file))))
+          });
+        }
+        callback();
+      }
+    ], function (err) {
+      if (err) console.log(err);
+      else socket.emit('/' + editObject.user + '/resDeviceConfig', arrConfig);
+    });
+
+    //Notify gateway
+    var mqttResetTopic = '/' + configObject.deviceID + '/reset';
+    var mqttConfigTopic = '/' +configObject.deviceID + '/config';
+    mqttClient.publish(mqttResetTopic, JSON.stringify({CMD : true}), retainOption);
+    setInterval(function() {
+      mqttClient.publish(mqttConfigTopic, JSON.stringify(JSON.parse(fs.readFileSync(configFilePath))), retainOption);
+    }, 3000);
+  });
+
+  socket.on('/write', function (rcvObj) {
+    mqttClient.publish('/' + rcvObj.deviceID + '/write', rcvObj.command);
+  });
+
+  socket.on('/resAlarm', function (alarmObject) {
+    console.log(alarmObject);
+    mqttClient.publish('/' + alarmObject.deviceID + '/resAlarm', JSON.stringify(alarmObject, null, 4));
+  });
+
+  socket.on('/reqHistory', function (_id) {
+    var historyModel = historyMongoose.createModel('Device_' + _id + '_history');
+    historyModel.find({}, { _id: 0, __v: 0 }, function (err, results) {
+      console.log(results);
+      socket.emit('/' + _id + '/resHistory', results);
+    });
+  });
+
+  socket.on('/publish', function (dataObj, backgroundObject) {
+    var template = fs.readFileSync('../Server/views/publish-template.ejs').toString();
+    var htlmObject = HTMLParser.parse(template);
+    htlmObject.querySelector('#mainPage1').appendChild(dataObj.html);
+    htlmObject.querySelector('#dashboard').appendChild(dataObj.dashboard);
+    var fileName = 'Device_' + dataObj.deviceID + '_publish.ejs';
+    fs.writeFileSync(path.resolve(databasePath, dataObj.user, 'Publish', fileName), htlmObject);
+    fs.writeFileSync(path.resolve(databasePath, dataObj.user, 'Parameters', 'Device_' + dataObj.deviceID + '_Elements.json'), JSON.stringify(dataObj.elements, null, 4));
+    fs.writeFileSync(path.resolve(databasePath, dataObj.user, 'Parameters', 'Device_' + dataObj.deviceID + '_VariableList.json'), JSON.stringify(dataObj.variableList, null, 4));
+    fs.writeFileSync(path.resolve(databasePath, dataObj.user, 'Parameters', 'Device_' + dataObj.deviceID + '_Background.json'), JSON.stringify(backgroundObject, null, 4));
+    socket.emit('/' + dataObj.deviceID + '/publishSuccess', 1);
+
+    //Update published state in Config file
+    fs.readFile(path.resolve(databasePath, dataObj.user, 'Config', 'deviceConfig_' + dataObj.deviceID + '.json'), function (err, data) {
+      if (err) console.log(err);
+      else {
+        var deviceObj = JSON.parse(data);
+        deviceObj.published = true;
+        deviceObj.link = '/published/' + deviceObj.user + '/Device_' + deviceObj.deviceID + '_publish.ejs';
+        fs.writeFile(path.resolve(databasePath, dataObj.user, 'Config', 'deviceConfig_' + dataObj.deviceID + '.json'), JSON.stringify(deviceObj, null, 4), function (err) {
+          if (err) console.log(err);
+          else console.log('Write success in ' + path.resolve(databasePath, dataObj.user, 'Config', 'deviceConfig_' + dataObj.deviceID + '.json'));
+        })
+
+      }
+    })
+
+  });
+
+  socket.on('/reqPublishParameters', function (userObject) {
+    var elementFile = path.resolve(databasePath, userObject.user, 'Parameters', 'Device_' + userObject.deviceID + '_Elements.json');
+    var variableFile = path.resolve(databasePath, userObject.user, 'Parameters', 'Device_' + userObject.deviceID + '_VariableList.json');
+    var backgroundFile = path.resolve(databasePath, userObject.user, 'Parameters', 'Device_' + userObject.deviceID + '_Background.json');
+    var elementObj = JSON.parse(fs.readFileSync(elementFile));
+    var variableObj = JSON.parse(fs.readFileSync(variableFile));
+    var backgroundObj = JSON.parse(fs.readFileSync(backgroundFile));
+    socket.emit('/' + userObject.deviceID + '/resPublishParameters', { htmlElements: elementObj, variableList: variableObj, background: backgroundObj });
+  });
+
+  //Client requests all variables when start up
+  socket.on('/reqAllVariables', function(rcvObject) {
+    mqttClient.publish(rcvObject.topic, '');
+  });
+
+  //Save design
+  socket.on('/save', function(scadaObject, backgroundObject, fileList) {
+    fs.writeFileSync(path.resolve(databasePath, scadaObject.user, 'Save', 'Design', fileList.designFile), JSON.stringify({mainPage1: scadaObject.html, dashboard: scadaObject.dashboard}), null, 4);
+    fs.writeFileSync(path.resolve(databasePath, scadaObject.user, 'Save', 'Parameters' , fileList.elementFile), JSON.stringify(scadaObject.elements, null, 4));
+    fs.writeFileSync(path.resolve(databasePath, scadaObject.user, 'Save', 'Parameters' , fileList.backgroundFile), JSON.stringify(backgroundObject, null, 4));
+    socket.emit('/' + scadaObject.deviceID + '/saveSuccess', 1);
+  });
+
+  //Request design
+  socket.on('/reqDesign', function(info) {
+    var designPath = path.resolve(databasePath, info.user, 'Save', 'Design', info.fileName);
+    var elementPath = path.resolve(databasePath, info.user, 'Save', 'Parameters', info.fileName.replace('.json' , '') + '_Elements.json');
+    var backgroundPath = path.resolve(databasePath, info.user, 'Save', 'Parameters', info.fileName.replace('.json', '') + '_Background.json');
+    socket.emit('/' + info.deviceID + '/resDesign', {
+      design : JSON.parse(fs.readFileSync(designPath)),
+      element : JSON.parse(fs.readFileSync(elementPath)),
+      background : JSON.parse(fs.readFileSync(backgroundPath))
+    });
+  });
+
+  //Rename saved design
+  socket.on('/rename', function(renameObj) {
+    var oldDesignFile = path.resolve(databasePath, renameObj.user, 'Save', 'Design' , renameObj.currentName);
+    var newDesignFile = path.resolve(databasePath, renameObj.user, 'Save', 'Design' , renameObj.newName);
+    var oldElementFile = path.resolve(databasePath, renameObj.user, 'Save', 'Parameters', renameObj.currentName.replace('.json' , '') + '_Elements.json');
+    var newElementFile = path.resolve(databasePath, renameObj.user, 'Save', 'Parameters', renameObj.newName.replace('.json' , '') + '_Elements.json');
+    var oldBackgroundPath = path.resolve(databasePath, renameObj.user, 'Save', 'Parameters', renameObj.currentName.replace('.json', '') + '_Background.json');
+    var newBackgroundPath = path.resolve(databasePath, renameObj.user, 'Save', 'Parameters', renameObj.newName.replace('.json', '') + '_Background.json');
+    fs.renameSync(oldDesignFile, newDesignFile);
+    fs.renameSync(oldElementFile, newElementFile);
+    fs.renameSync(oldBackgroundPath, newBackgroundPath);
+  });
+
+  //Delete design
+  socket.on('/deleteDesign', function(deleteObj){
+    var designPath = path.resolve(databasePath, deleteObj.user, 'Save', 'Design');
+    var parameterPath = path.resolve(databasePath, deleteObj.user, 'Save', 'Parameters');
+    if (fs.existsSync(path.resolve(designPath, deleteObj.file))) {
+      fs.unlinkSync(path.resolve(designPath, deleteObj.file));
+      fs.unlinkSync(path.resolve(parameterPath, deleteObj.file.replace('.json', '') + '_Elements.json'));
+      fs.unlinkSync(path.resolve(parameterPath, deleteObj.file.replace('.json', '') + '_Background.json'));
+    }
+  })
+
+});
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
+
+//Function
+

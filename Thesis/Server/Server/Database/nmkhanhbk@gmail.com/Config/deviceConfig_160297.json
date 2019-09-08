@@ -1,0 +1,33 @@
+{
+    "deviceName": "Raspberry 3",
+    "deviceID": "160297",
+    "longitude": "106.321289",
+    "latitude": "10.389260",
+    "period": "1000",
+    "PLCs": [
+        {
+            "name": "S7_1500",
+            "protocol": "S7-connection",
+            "ipAddress": "192.168.100.150",
+            "variables": [
+                {
+                    "name": "Count",
+                    "dataType": "Int",
+                    "plc": "S7_1500",
+                    "address": "MW200",
+                    "access": "read",
+                    "unit": "Times",
+                    "isAlarm": false,
+                    "isHistory": false
+                }
+            ]
+        }
+    ],
+    "user": "nmkhanhbk@gmail.com",
+    "creationTime": "3/3/2019, 12:51:30 AM",
+    "lastActive": "10/03/2019",
+    "published": false,
+    "status": false,
+    "fileName": "deviceConfig_160297.json",
+    "link": "/published/nmkhanhbk@gmail.com/Device_160297_publish.ejs"
+}

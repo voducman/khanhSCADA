@@ -1,0 +1,32 @@
+{
+    "deviceName": "Siemens Viet Nam",
+    "deviceID": "230497",
+    "longitude": "105.853880",
+    "latitude": "21.028280",
+    "period": "3000",
+    "PLCs": [
+        {
+            "name": "Station-1",
+            "protocol": "S7-connection",
+            "ipAddress": "192.168.22.100",
+            "variables": [
+                {
+                    "name": "Speed",
+                    "dataType": "Double",
+                    "plc": "Station-1",
+                    "address": "MD100",
+                    "access": "read",
+                    "unit": "RPM",
+                    "isAlarm": true,
+                    "isHistory": true
+                }
+            ]
+        }
+    ],
+    "user": "nmkhanhbk@gmail.com",
+    "creationTime": "3/1/2019, 5:52:57 PM",
+    "lastActive": "05/03/2019",
+    "published": false,
+    "status": true,
+    "fileName": "deviceConfig_230497.json"
+}

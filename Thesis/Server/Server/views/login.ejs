@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/signin.css" rel="stylesheet">
+
+    <title>Login</title>
+
+    
+
+</head>
+
+<body class="text-center">
+    <form class="form-signin" method="POST">
+       
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <hr class="colorgraph">
+        <% if (error != '') { %>
+        <div class="alert alert-danger alert-box" role="alert"> 
+          <%= error %>
+        </div>
+        <% } %>
+        <label for="email" class="sr-only">Email address</label>
+        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <!-- <div class="custom-control custom-checkbox mt-1 mb-3 float-left">
+          <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+          <label class="custom-control-label" for="customCheck">Remember me</label>
+        </div> -->
+        <div>
+          <hr class="colorgraph mt-3">
+        </div>
+        
+        <button class="btn btn-lg btn-primary btn-block" id="btnSignIn" type="submit">Sign in</button>
+        <a class="btn btn-lg btn-success btn-block" href="/register" >Register</a>
+        <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+      </form> 
+
+    <!--Bootstrap script embedded-->
+    <script src="/javascripts/jquery-3.3.1.min.js"></script>
+    <script src="/javascripts/popper.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script>
+      
+    </script>
+</body>
+
+</html>

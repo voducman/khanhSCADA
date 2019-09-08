@@ -1,0 +1,69 @@
+{
+    "deviceName": "Device -2",
+    "deviceID": "123456789",
+    "longitude": "105.972298",
+    "latitude": "10.254260",
+    "period": "3000",
+    "PLCs": [
+        {
+            "name": "S7-1500",
+            "protocol": "S7-connection",
+            "ipAddress": "192.168.1.150",
+            "variables": [
+                {
+                    "name": "Bien-5",
+                    "dataType": "Bool",
+                    "plc": "S7-1500",
+                    "address": "5",
+                    "access": "read",
+                    "unit": "",
+                    "isAlarm": false,
+                    "isHistory": false
+                },
+                {
+                    "name": "Bien6",
+                    "dataType": "Double",
+                    "plc": "S7-1500",
+                    "address": "6",
+                    "access": "read",
+                    "unit": "X",
+                    "isAlarm": true,
+                    "isHistory": true
+                }
+            ]
+        },
+        {
+            "name": "OPCUA",
+            "protocol": "OPCUA",
+            "ipAddress": "192.168.0.1",
+            "variables": [
+                {
+                    "name": "Bien7",
+                    "dataType": "Double",
+                    "plc": "OPCUA",
+                    "address": "7",
+                    "access": "read",
+                    "unit": "",
+                    "isAlarm": false,
+                    "isHistory": false
+                },
+                {
+                    "name": "Bien8",
+                    "dataType": "Double",
+                    "plc": "OPCUA",
+                    "address": "8",
+                    "access": "read",
+                    "unit": "",
+                    "isAlarm": false,
+                    "isHistory": true
+                }
+            ]
+        }
+    ],
+    "user": "nmkhanhbk@gmail.com",
+    "creationTime": "3/1/2019, 2:31:30 AM",
+    "lastActive": "",
+    "status": true,
+	"published": true,
+	"fileName": "deviceConfig_123456789.json"
+}

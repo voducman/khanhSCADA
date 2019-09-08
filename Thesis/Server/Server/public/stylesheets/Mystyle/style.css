@@ -1,0 +1,373 @@
+@font-face {
+    font-family: "7SEG";
+    src: url('../font/7Segment.ttf') format('opentype');
+  }
+
+body{
+    background: #282d30;
+    height: 100%;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+.no-gutter-all  { 
+    padding: 0;
+    margin: 0;
+}
+
+.no-gutter-margin{
+    margin: 1px;
+    padding: 1px;
+}
+
+.icon-gutter{
+    padding: 1px;
+    margin: 1px;
+}
+
+.button-icon{
+    -webkit-transition-duration: 0.1s; /* Safari */
+  transition-duration: 0.1s;
+  padding: 3px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.button-icon:hover{
+    background-color: #b3b3b3;
+}
+
+.img-icon{
+   max-height: 40px;
+    max-width: 40px;
+}
+.full-div{
+    height: 100%;
+    width:100%;
+}
+
+[data-toggle="collapse"] .fa:before {  
+    content: "\f13a";
+  }
+  
+  [data-toggle="collapse"].collapsed .fa:before {
+    content: "\f138";
+  }
+
+.toggle-nav a{
+    color: white;
+}
+
+.full-height{
+    height: 100vh;
+}
+
+.scrollable{
+    max-height: 700px;
+    overflow-y:scroll;
+}
+
+.row-pointer{
+    cursor:pointer;
+}
+.row-selected{
+    background: #292b2c;
+    color:#f7f7f7;
+}
+
+.row-selected:hover{
+    
+    color:#292b2c;
+}
+
+#tagModal {
+    background: rgba(0, 0, 0, 0.4);
+    }
+
+#chooseImageModal{
+    background: rgba(0, 0, 0, 0.4);
+}
+    
+#alarmTable tbody {
+    color:red;
+    
+}
+
+#alarmTable {
+    overflow-y: auto;
+    height: 100%;
+}
+
+
+
+
+.alarm-selected{
+    background : #bdbdbd;
+    color : red;
+}
+
+/*
+***********************************************************************************************
+                                Toggle button (Switch) style 
+***********************************************************************************************
+*/
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    float: right;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    display: none;
+}
+
+/* The slider */
+.slider-sw {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider-sw:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input.default:checked+.slider-sw {
+    background-color: #444;
+}
+
+input.primary:checked+.slider-sw {
+    background-color: #2196F3;
+}
+
+input.success:checked+.slider-sw {
+    background-color: #8bc34a;
+}
+
+input.info:checked+.slider-sw {
+    background-color: #3de0f5;
+}
+
+input.warning:checked+.slider-sw {
+    background-color: #FFC107;
+}
+
+input.danger:checked+.slider-sw {
+    background-color: #f44336;
+}
+
+input:focus+.slider-sw {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider-sw:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider-sw.round {
+    border-radius: 34px;
+}
+
+.slider-sw.round:before {
+    border-radius: 50%;
+}
+
+
+/*
+***********************************************************************************************
+                                Image Radio Style 
+***********************************************************************************************
+*/
+
+label[class=imgMenu]  { 
+    display: inline-block;
+    margin: 10px;
+    max-width: 70px;
+    max-height: 70px;
+}
+
+label[class=imgMenu] > img { 
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+}
+
+label[class=imgMenu] > p { 
+    word-break: break-all;
+    overflow:hidden;
+}
+
+label[class=imgMenu] > input { /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label[class=imgMenu] > input + img , p { /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label[class=imgMenu] > input:checked + img { /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
+/*
+***********************************************************************************************
+                                Spinner modal
+***********************************************************************************************
+*/
+
+.bd-example-modal-lg .modal-dialog{
+    display: table;
+    position: relative;
+    margin: 0 auto;
+    top: calc(50% - 24px);
+  }
+
+  .bd-example-modal-lg .modal-dialog .modal-content{
+    background-color: transparent;
+    border: none;
+  }
+
+/*
+***********************************************************************************************
+                                Success modal
+***********************************************************************************************
+*/
+
+
+  /*--thank you pop starts here--*/
+.thank-you-pop{
+	width:100%;
+ 	padding:20px;
+	text-align:center;
+}
+.thank-you-pop img{
+	width:76px;
+	height:auto;
+	margin:0 auto;
+	display:block;
+	margin-bottom:25px;
+}
+
+.thank-you-pop h1{
+	font-size: 42px;
+    margin-bottom: 25px;
+	color:#5C5C5C;
+}
+.thank-you-pop p{
+	font-size: 20px;
+    margin-bottom: 27px;
+ 	color:#5C5C5C;
+}
+.thank-you-pop h3.cupon-pop{
+	font-size: 25px;
+    margin-bottom: 40px;
+	color:#222;
+	display:inline-block;
+	text-align:center;
+	padding:10px 20px;
+	border:2px dashed #222;
+	clear:both;
+	font-weight:normal;
+}
+.thank-you-pop h3.cupon-pop span{
+	color:#03A9F4;
+}
+.thank-you-pop a{
+	display: inline-block;
+    margin: 0 auto;
+    padding: 9px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    background-color: #8BC34A;
+    border-radius: 17px;
+}
+.thank-you-pop a i{
+	margin-right:5px;
+	color:#fff;
+}
+#ignismyModal .modal-header{
+    border:0px;
+}
+/*--thank you pop ends here--*/
+
+/*
+***********************************************************************************************
+                                Tooltip for vertical slider
+***********************************************************************************************
+*/
+
+.slider::before {
+    background: none;
+}
+
+.tooltip.tooltip-main {
+    opacity: 0.7;
+}
+
+.slider-vertical {
+    background: none;
+}
+
+
+.slider-track div {
+    background: #dee2e6
+}
+
+
+/*
+***********************************************************************************************
+                                Symbol sets scrollable modal
+***********************************************************************************************
+*/
+.modal-scrollable {
+    max-height: 700px;
+    overflow-y:auto;
+}
+
+/*
+***********************************************************************************************
+                                Button size
+***********************************************************************************************
+*/
+
+.saveChangeButton , .closeButton{
+    min-width: 100px;
+}
+
+.table-selected {
+    background: #b3b3b3
+}
+
+.btn-100-Width {
+    min-width: 100px;
+}
+
+.function-icon:hover{
+    cursor: pointer;
+    color: #4285F4;
+}

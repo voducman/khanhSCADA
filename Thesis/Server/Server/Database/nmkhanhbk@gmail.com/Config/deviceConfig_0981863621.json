@@ -1,0 +1,59 @@
+{
+    "deviceName": "Demo gateway",
+    "deviceID": "0981863621",
+    "longitude": 106.7,
+    "latitude": 10.9,
+    "period": 2000,
+    "PLCs": [
+        {
+            "name": "MotorControl",
+            "protocol": "S7-connection",
+            "ipAddress": "192.168.100.152",
+            "variables": [
+                {
+                    "name": "Motor_1_Speed",
+                    "dataType": "Double",
+                    "plc": "MotorControl",
+                    "address": "DB3.DBD18",
+                    "access": "read/write",
+                    "unit": "RPM",
+                    "isAlarm": true,
+                    "alarmType": "1",
+                    "parameters": {
+                        "lolo": "100",
+                        "lo": "300",
+                        "hi": "1200",
+                        "hihi": "1400",
+                        "deadband": "50"
+                    },
+                    "isHistory": false
+                },
+                {
+                    "name": "Motor_1_Alarm",
+                    "dataType": "Bool",
+                    "plc": "MotorControl",
+                    "address": "DB1.DBX12.2",
+                    "access": "read/write",
+                    "unit": "",
+                    "isAlarm": true,
+                    "alarmType": "0",
+                    "parameters": {
+                        "lolo": "100",
+                        "lo": "300",
+                        "hi": "1200",
+                        "hihi": "1400",
+                        "deadband": "50"
+                    },
+                    "isHistory": false
+                }
+            ]
+        }
+    ],
+    "user": "nmkhanhbk@gmail.com",
+    "creationTime": "5/1/2019, 1:54:01 AM",
+    "lastActive": "2019-05-07 13:29:12",
+    "published": false,
+    "status": false,
+    "fileName": "deviceConfig_0981863621.json",
+    "link": "/published/nmkhanhbk@gmail.com/Device_0981863621_publish.ejs"
+}

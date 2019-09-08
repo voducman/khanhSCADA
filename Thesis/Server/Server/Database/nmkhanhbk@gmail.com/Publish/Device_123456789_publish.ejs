@@ -1,0 +1,197 @@
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="/stylesheets/all.css" />
+    
+    <link rel="stylesheet" href="/stylesheets/bootstrap-formhelpers.min.css" />
+    
+    <link rel="stylesheet" href="/stylesheets/bootstrap-slider.min.css" />
+    
+    <link rel="stylesheet" href="/stylesheets/publish-style.css" />
+
+    <title>Published Page</title>
+</head>
+
+<body onbeforeunload="return confirm('Are you sure to reload?')">
+    
+
+
+    <div class="container-fluid row mx-2 px-0">
+
+
+        
+        <div id="mainPagePanel" class="col-md bg-dark my-0 no-gutter-all">
+            <div class="container-fluid no-gutter-all">
+                
+
+
+                <ul class="nav nav-tabs bg-primary toggle-nav justify-content-center" role="tablist">
+                    <li class="nav-item mr-auto my-auto ml-4 text-white">
+                        <div class="row">
+                            <a class="btn returnLink" href = "/device"><i class="fas fa-undo mr-2" ></i>Device Page</a>
+                            <p id="deviceID" hidden><%= deviceID %></p>
+                    </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#mainPage1"><i class="fas fa-home mr-1"></i><strong>Home</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " data-toggle="tab" href="#alarm"><i class="fas fa-exclamation-triangle mr-1"></i><strong>Alarm</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " data-toggle="tab" href="#history"><i class="fas fa-history mr-1"></i><strong>History</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#dashboard"><i class="far fa-chart-bar mr-1"></i><strong>Dashboard</strong></a>
+                    </li>
+                    <li class="nav-item ml-auto my-auto mr-2 text-white row">
+                        <p class="my-auto" id="user"><%= user %></p>
+                    </li>
+                    <a class="btn mr-4" href="/logout" onclick="return confirm('Are you sure to logout?')"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                    
+                </ul>
+
+
+
+                
+                <div class="tab-content">
+                    <div id="mainPage1" class="container-fluid tab-pane active bg-white full-height px-2">
+                    
+                    <svg id="SvgjsSvg1001" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"><defs id="SvgjsDefs1002"></defs></svg><div class="contextMenu draggable ui-draggable ui-draggable-handle" style="background: transparent; position: absolute; top: 275px; left: 302.5px;"><div class="slider slider-vertical" id="" style="height: 300px;"><div class="slider-track"><div class="slider-track-low" style="top: 0px; height: 0%;"></div><div class="slider-selection" style="top: 0%; height: 50%;"></div><div class="slider-track-high" style="bottom: 0px; height: 50%;"></div></div><div class="tooltip tooltip-main left bs-tooltip-left" role="presentation" style="right: 100%; top: 50%;"><div class="tooltip-arrow arrow my-2"></div><div class="tooltip-inner">50</div></div><div class="tooltip tooltip-min left" role="presentation" style="right: 100%; display: none;"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max left" role="presentation" style="right: 100%; display: none;"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="top: 50%; background: rgb(0, 123, 255);" tabindex="0"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="top: 0%; background: rgb(0, 123, 255);" tabindex="0"></div></div><input type="range" id="verticalSlider0" min="0" max="100" data-value="50" value="50" style="display: none;"></div><div class="contextMenu draggable ui-draggable ui-draggable-handle" style="background: transparent; position: absolute; top: 333px; left: 460.5px;"><div class="slider slider-vertical" id="" style="height: 400px;"><div class="slider-track"><div class="slider-track-low" style="top: 0px; height: 0%;"></div><div class="slider-selection" style="top: 0%; height: 50%;"></div><div class="slider-track-high" style="bottom: 0px; height: 50%;"></div></div><div class="tooltip tooltip-main left bs-tooltip-left" role="presentation" style="right: 100%; top: 50%;"><div class="tooltip-arrow arrow my-2"></div><div class="tooltip-inner">50</div></div><div class="tooltip tooltip-min left" role="presentation" style="right: 100%; display: none;"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div><div class="tooltip tooltip-max left" role="presentation" style="right: 100%; display: none;"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div><div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="top: 50%; background: rgb(0, 123, 255);" tabindex="0"></div><div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="top: 0%; background: rgb(0, 123, 255);" tabindex="0"></div></div><input type="range" id="verticalSlider1" min="0" max="100" data-value="50" value="50" style="display: none;"></div></div>
+                    <div id="alarm" class="container-fluid tab-pane fade bg-white full-height px-2">
+                        <div class="row pt-3 px-2">
+                            <button class="btn btn-primary ml-auto" id="btnAck">Acknowledge</button>
+                            <button class="btn btn-primary mx-3" id="btnAckAll">Acknowledge All</button>
+                        </div>
+
+                        <div class="row mt-3 px-2">
+                            <table class="table table-hover" id="alarmTable">
+                                <thead class="bg-secondary text-white">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Source</th>
+                                        <th>Value</th>
+                                        <th>Message</th>
+                                        <th>Type</th>
+                                        <th>State</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" /></td>
+                                        <td>10/03/2019</td>
+                                        <td>20:00:00</td>
+                                        <td>Level</td>
+                                        <td>3.5</td>
+                                        <td>Too high level</td>
+                                        <td>HI HI</td>
+                                        <td>UNACK</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" /></td>
+                                        <td>10/03/2019</td>
+                                        <td>20:00:00</td>
+                                        <td>Khanh</td>
+                                        <td>3.5</td>
+                                        <td>Too high level</td>
+                                        <td>HI HI</td>
+                                        <td>UNACK</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div id="history" class="container-fluid tab-pane fade bg-white full-height px-2">
+                        <div class="row pt-3 px-2">
+
+                            <label for="#inputFilter" class="my-auto mx-2">Filter</label>
+                            <input class="form-control" id="inputFilter" type="text" placeholder="Search.."
+                                style="max-width : 400px" />
+
+                            <label for="#inputFilter" class="my-auto ml-5 mr-2">From</label>
+                            <input class="form-control inputTimeFilter" id="inputFrom" type="date"
+                                style="max-width : 200px" />
+
+                            <label for="#inputFilter" class="my-auto ml-5 mr-2">To</label>
+                            <input class="form-control inputTimeFilter" id="inputTo" type="date"
+                                style="max-width : 200px" />
+
+                            <button class="btn btn-primary ml-auto mr-3" id="btnRefreshHistory">Refresh</button>
+                            <button class="btn btn-primary mr-3" id="btnExportToPdf">Export</button>
+                        </div>
+
+                        <div class="row mt-3 px-2">
+                            <table class="table table-hover text-center" id="historyTable">
+                                <thead class="bg-secondary text-white">
+                                    <tr>
+                                        <th>Tag</th>
+                                        <th>Data type</th>
+                                        <th>Address</th>
+                                        <th>Value</th>
+                                        <th>Timestamp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Speed</td>
+                                        <td>aa</td>
+                                        <td>MW100</td>
+                                        <td>200</td>
+                                        <td>23/04/2019</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="dashboard" class="container-fluid tab-pane fade bg-white full-height px-2"><br />
+                        <h3>Dashboard</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    
+
+    
+    
+    <script src="/javascripts/jquery-3.3.1.min.js"></script>
+    
+    <script src="/javascripts/jspdf.min.js"></script>
+    <script src="/javascripts/jspdf.plugin.autotable.js"></script>
+    
+    
+    
+    <script src="/javascripts/popper.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    
+    
+    
+    <script src="/javascripts/bootstrap-slider.min.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    <script src="/javascripts/socket.io.js"></script>
+    
+    <script src="/javascripts/Myscripts/publish.js"></script>
+
+</body>
+
+</html>

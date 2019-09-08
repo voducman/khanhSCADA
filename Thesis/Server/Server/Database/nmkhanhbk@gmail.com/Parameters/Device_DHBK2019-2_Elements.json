@@ -1,0 +1,104 @@
+[
+    {
+        "type": "symbolSet",
+        "id": "symbolSet0",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "PLC1200_StartLight"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Light/Light_003.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Light/Light_002.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue1",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "PLC1200_Speed"
+            },
+            {
+                "name": "format",
+                "value": "3"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "input",
+        "id": "input2",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "PLC1200_Speed"
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "switch",
+        "id": "switch3",
+        "properties": [
+            {
+                "name": "onCommand",
+                "value": "PLC1200_StopLight = 1"
+            },
+            {
+                "name": "offCommand",
+                "value": "PLC1200_StopLight = 0"
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text4",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text5",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text6",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    }
+]

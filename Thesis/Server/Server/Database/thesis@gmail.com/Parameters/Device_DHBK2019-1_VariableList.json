@@ -1,0 +1,50 @@
+[
+    {
+        "name": "TankController_Start_1",
+        "value": null
+    },
+    {
+        "name": "TankController_Stop_1",
+        "value": null
+    },
+    {
+        "name": "TankController_SetMode_1",
+        "value": null
+    },
+    {
+        "name": "TankController_Man_FillValve_1",
+        "value": null
+    },
+    {
+        "name": "TankController_Man_DIschargeValve_1",
+        "value": null
+    },
+    {
+        "name": "TankController_Level_1",
+        "value": null
+    },
+    {
+        "name": "TankController_DischargeFlow_1",
+        "value": null
+    },
+    {
+        "name": "TankController_FillValve_1",
+        "value": null
+    },
+    {
+        "name": "TankController_DischargeValve_1",
+        "value": null
+    },
+    {
+        "name": "TankController_Mode_1",
+        "value": null
+    },
+    {
+        "name": "TankController_StartLight_1",
+        "value": null
+    },
+    {
+        "name": "TankController_StopLight_1",
+        "value": null
+    }
+]

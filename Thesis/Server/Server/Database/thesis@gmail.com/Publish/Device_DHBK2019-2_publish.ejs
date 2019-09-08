@@ -1,0 +1,288 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="/stylesheets/all.css" />
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap-formhelpers.min.css" />
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap-slider.min.css" />
+
+    <link rel="stylesheet" href="/stylesheets/Mystyle/publish-style.css" />
+
+    <title>Published Page</title>
+</head>
+
+<body onbeforeunload="return confirm('Are you sure to reload?')">
+
+
+
+    <div class="container-fluid row mx-0 px-0">
+
+
+
+        <div id="mainPagePanel" class="col-md bg-dark my-0 no-gutter-all">
+            <div class="container-fluid no-gutter-all">
+
+
+
+                <ul class="nav nav-tabs bg-primary toggle-nav justify-content-center" role="tablist">
+                    <li class="nav-item mr-auto my-auto ml-4 text-white">
+                        <div class="row">
+                            <a class="btn returnLink" href="/device"><i class="fas fa-undo mr-2"></i>Device Page</a>
+                            <p id="deviceID" hidden><%= deviceID %></p>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#mainPage1"><i
+                                class="fas fa-home mr-1"></i><strong>Home</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " data-toggle="tab" href="#alarm" id="alarmTitle"><i
+                                class="fas fa-exclamation-triangle mr-1"></i><strong>Alarm</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " data-toggle="tab" href="#history"><i
+                                class="fas fa-history mr-1"></i><strong>History</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#dashboard"><i
+                                class="far fa-chart-bar mr-1"></i><strong>Dashboard</strong></a>
+                    </li>
+                    <li class="nav-item ml-auto my-auto mr-2 text-white row">
+                        <p class="my-auto" id="user"><%= user %></p>
+                    </li>
+                    <a class="btn mr-4" href="/logout" onclick="return confirm('Are you sure to logout?')"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+
+                </ul>
+
+
+
+
+                <div class="tab-content">
+                    <div id="mainPage1" class="container-fluid tab-pane active bg-white full-height px-2">
+
+                        <!-- <div class="alert alert-warning alert-dismissible ml-auto fade show" style = "width:20%">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <i
+                                class="fas fa-exclamation-triangle mr-1"></i><strong>Warning!</strong> New alarm
+                        </div> -->
+                        <svg id="SvgjsSvg1001" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                            version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:svgjs="http://svgjs.com/svgjs">
+                            <defs id="SvgjsDefs1002"></defs>
+                            <rect id="SvgjsRect1012" width="320" height="216" stroke="#0080ff" stroke-width="3"
+                                fill-opacity="0" rx="8" ry="8" x="143" y="565"
+                                style="-webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; cursor: grab; user-select: none; opacity: 1;"
+                                transform="translate(165,0)" class="contextMenu plain-draggable" fill="#000000"></rect>
+                            <rect id="SvgjsRect1013" width="320" height="216" stroke="#008000" stroke-width="3"
+                                fill-opacity="0" rx="8" ry="8" x="567" y="567"
+                                style="-webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; cursor: grab; user-select: none; opacity: 1;"
+                                transform="translate(165,0)" class="contextMenu plain-draggable" fill="#000000"></rect>
+                            <rect id="SvgjsRect1014" width="320" height="216" stroke="#000000" stroke-width="3"
+                                fill-opacity="0" rx="8" ry="8" x="977" y="564"
+                                style="-webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; cursor: grab; user-select: none; opacity: 1;"
+                                transform="translate(165,0)" class="contextMenu plain-draggable" fill="#000000"></rect>
+                        </svg><img id="symbolSet0" class="contextMenu draggable ui-draggable ui-draggable-handle"
+                            src="/images/symbols/Conveyors/Conveyors_006.png"
+                            style="height: 70px; width: 600px; position: absolute; top: 492px; left: 919px; cursor: pointer; opacity: 1;"><img
+                            id="symbolSet1" class="contextMenu draggable ui-draggable ui-draggable-handle"
+                            src="/images/symbols/Conveyors/Conveyors_007.png"
+                            style="height: 70px; width: 600px; position: absolute; top: 492px; left: 368px; cursor: pointer; opacity: 1;">
+                        <p id="text2" class="contextMenu plain-draggable"
+                            style="font-size: 25px; font-family: Arial; font-style: normal; color: rgb(0, 0, 0); position: absolute; top: 430px; left: 1173.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            Entry conveyor</p>
+                        <p id="text3" class="contextMenu plain-draggable"
+                            style="font-size: 25px; font-family: Arial; font-style: normal; color: rgb(0, 0, 0); position: absolute; top: 432px; left: 623.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            Exit conveyor</p><button id="button4"
+                            class="btn btn-primary contextMenu draggable ui-draggable ui-draggable-handle"
+                            style="position: absolute; top: 226px; left: 818px; color: rgb(255, 255, 255); background: rgb(0, 128, 0); font-size: 16px; font-style: normal; opacity: 1; width: 120px; height: 38px;">Start</button><button
+                            id="button5" class="btn btn-primary contextMenu draggable ui-draggable ui-draggable-handle"
+                            style="position: absolute; top: 291px; left: 817px; color: rgb(255, 255, 255); background: rgb(255, 0, 0); font-size: 16px; font-style: normal; opacity: 1; width: 120px; height: 38px;">Stop</button><button
+                            id="button6" class="btn btn-primary contextMenu draggable ui-draggable ui-draggable-handle"
+                            style="position: absolute; top: 356px; left: 818px; color: rgb(255, 255, 255); background: rgb(255, 128, 0); font-size: 16px; font-style: normal; opacity: 1; width: 120px; height: 38px;">Reset
+                            Maint</button><img id="symbolSet7"
+                            class="contextMenu draggable ui-draggable ui-draggable-handle"
+                            src="/images/symbols/Light/Light_008.png"
+                            style="height: 40px; width: 40px; position: absolute; top: 227px; left: 998px; cursor: pointer; opacity: 1;"><img
+                            id="symbolSet8" class="contextMenu draggable ui-draggable ui-draggable-handle"
+                            src="/images/symbols/Light/Light_010.png"
+                            style="height: 40px; width: 40px; position: absolute; top: 292px; left: 999px; cursor: pointer; opacity: 1;"><img
+                            id="symbolSet9" class="contextMenu draggable ui-draggable ui-draggable-handle"
+                            src="/images/symbols/Light/Light_007.png"
+                            style="height: 40px; width: 40px; position: absolute; top: 354px; left: 999px; cursor: pointer; opacity: 1;">
+                        <p id="text10" class="contextMenu plain-draggable"
+                            style="font-size: 30px; font-family: Arial; font-style: normal; color: rgb(255, 0, 0); position: absolute; top: 132px; left: 791.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            SORTING STATION</p>
+                        <p id="text11" class="contextMenu plain-draggable"
+                            style="font-size: 20px; font-family: Arial; font-style: normal; color: rgb(0, 0, 0); position: absolute; top: 43px; left: 1394.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            Total running time:</p>
+                        <p id="text12" class="contextMenu plain-draggable"
+                            style="font-size: 20px; font-family: Arial; font-style: normal; color: rgb(0, 0, 0); position: absolute; top: 43px; left: 1603.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            mins</p>
+                        <p id="displayValue13" class="contextMenu plain-draggable"
+                            style="font-size: 20px; font-family: Arial; font-style: normal; color: rgb(0, 0, 0); position: absolute; top: 43px; left: 1572.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            0</p>
+                        <p id="text14" class="contextMenu plain-draggable"
+                            style="font-size: 30px; font-family: Arial; font-style: normal; color: rgb(0, 0, 0); position: absolute; top: 629px; left: 1209.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            Other product</p>
+                        <p id="text15" class="contextMenu plain-draggable"
+                            style="font-size: 30px; font-family: Arial; font-style: normal; color: rgb(0, 128, 255); position: absolute; top: 632px; left: 381.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            Blue product</p>
+                        <p id="text16" class="contextMenu plain-draggable"
+                            style="font-size: 30px; font-family: Arial; font-style: normal; color: rgb(0, 128, 0); position: absolute; top: 631px; left: 800.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            Green product</p>
+                        <p id="displayValue17" class="contextMenu plain-draggable"
+                            style="font-size: 70px; font-family: Arial; font-style: normal; color: rgb(0, 128, 255); position: absolute; top: 698px; left: 431.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            5</p>
+                        <p id="displayValue18" class="contextMenu plain-draggable"
+                            style="font-size: 70px; font-family: Arial; font-style: normal; color: rgb(0, 128, 0); position: absolute; top: 698px; left: 853.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            7</p>
+                        <p id="displayValue19" class="contextMenu plain-draggable"
+                            style="font-size: 70px; font-family: Arial; font-style: normal; color: rgb(0, 0, 0); position: absolute; top: 698px; left: 1265.5px; will-change: left, top; -webkit-tap-highlight-color: transparent; box-shadow: transparent 0px 0px 1px; opacity: 1; cursor: grab; user-select: none; margin: 0px;">
+                            12</p>
+                    </div>
+                    <div id="alarm" class="container-fluid tab-pane fade bg-white full-height px-2">
+                        <div class="row pt-3 px-2">
+                            <button class="btn btn-primary ml-auto mr-5" id="btnAck">Acknowledge</button>
+
+                        </div>
+
+                        <div class="row mt-3 px-2" style="max-height: 90%; overflow-y:auto">
+                            <table class="table table-hover" id="alarmTable">
+                                <thead class="bg-secondary text-white">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Source</th>
+                                        <th>Value</th>
+                                        <th>Message</th>
+                                        <th>Type</th>
+                                        <th>State</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" /></td>
+                                        <td>10/03/2019</td>
+                                        <td>20:00:00</td>
+                                        <td>Level</td>
+                                        <td>3.5</td>
+                                        <td>Too high level</td>
+                                        <td>HI HI</td>
+                                        <td>UNACK</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" /></td>
+                                        <td>10/03/2019</td>
+                                        <td>20:00:00</td>
+                                        <td>Khanh</td>
+                                        <td>3.5</td>
+                                        <td>Too high level</td>
+                                        <td>HI HI</td>
+                                        <td>UNACK</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div id="history" class="container-fluid tab-pane fade bg-white full-height px-2">
+                        <div class="row pt-3 px-2">
+
+                            <label for="#inputFilter" class="my-auto mx-2">Filter</label>
+                            <input class="form-control" id="inputFilter" type="text" placeholder="Search.."
+                                style="max-width : 400px" />
+
+                            <label for="#inputFilter" class="my-auto ml-5 mr-2">From</label>
+                            <input class="form-control inputTimeFilter" id="inputFrom" type="date"
+                                style="max-width : 200px" />
+
+                            <label for="#inputFilter" class="my-auto ml-5 mr-2">To</label>
+                            <input class="form-control inputTimeFilter" id="inputTo" type="date"
+                                style="max-width : 200px" />
+
+                            <button class="btn btn-primary ml-auto mr-3" id="btnRefreshHistory">Refresh</button>
+                            <button class="btn btn-primary mr-3" id="btnExportToPdf">Export</button>
+                        </div>
+
+                        <div class="row mt-3 px-2" style="max-height: 90%; overflow-y:auto">
+                            <table class="table table-hover text-center" id="historyTable">
+                                <thead class="bg-secondary text-white">
+                                    <tr>
+                                        <th>Tag</th>
+                                        <th>Data type</th>
+                                        <th>Address</th>
+                                        <th>Value</th>
+                                        <th>Timestamp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Speed</td>
+                                        <td>aa</td>
+                                        <td>MW100</td>
+                                        <td>200</td>
+                                        <td>23/04/2019</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div id="dashboard" class="container-fluid tab-pane fade bg-white full-height"><br />
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="/javascripts/jquery-3.3.1.min.js"></script>
+
+    <script src="/javascripts/jspdf.min.js"></script>
+    <script src="/javascripts/jspdf.plugin.autotable.js"></script>
+
+
+
+    <script src="/javascripts/popper.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+
+
+
+    <script src="/javascripts/bootstrap-slider.min.js"></script>
+
+
+
+
+
+
+
+    <script src="/javascripts/socket.io.js"></script>
+
+    <script src="/javascripts/moment.js"></script>
+    <script src="/javascripts/Chart.min.js"></script>
+    <script src="/javascripts/hammer.js"></script>
+
+    <script src="/javascripts/raphael-2.1.4.min.js"></script>
+    <script src="/javascripts/justgage.js"></script>
+
+    <script src="/javascripts/Myscripts/publish.js"></script>
+
+</body>
+
+</html>

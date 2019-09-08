@@ -1,0 +1,52 @@
+[
+    {
+        "type": "displayValue",
+        "id": "displayValue0",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "format",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue1",
+        "properties": [
+            {
+                "name": "tag",
+                "value": ""
+            },
+            {
+                "name": "format",
+                "value": ""
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button2",
+        "properties": [
+            {
+                "name": "command",
+                "value": ""
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    }
+]

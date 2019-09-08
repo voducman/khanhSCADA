@@ -1,0 +1,136 @@
+[
+    {
+        "type": "button",
+        "id": "button0",
+        "properties": [
+            {
+                "name": "command",
+                "value": "S7_1500_M0_0 = 1"
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "button",
+        "id": "button1",
+        "properties": [
+            {
+                "name": "command",
+                "value": "S7_1500_M0_0 = 0"
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "switch",
+        "id": "switch2",
+        "properties": [
+            {
+                "name": "onCommand",
+                "value": "S7_1500_M0_0 = 1"
+            },
+            {
+                "name": "offCommand",
+                "value": "S7_1500_M0_0 = 0"
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "symbolSet",
+        "id": "symbolSet4",
+        "properties": [
+            {
+                "name": "onCondition",
+                "value": "S7_1500_M0_0"
+            },
+            {
+                "name": "onSymbol",
+                "value": "/images/symbols/Light/Light_028.png"
+            },
+            {
+                "name": "offSymbol",
+                "value": "/images/symbols/Light/Light_027.png"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "verticalslider",
+        "id": "verticalSlider5",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "minTag",
+                "value": ""
+            },
+            {
+                "name": "minValue",
+                "value": "0"
+            },
+            {
+                "name": "maxTag",
+                "value": ""
+            },
+            {
+                "name": "maxValue",
+                "value": "1500"
+            },
+            {
+                "name": "isMinTag",
+                "value": false
+            },
+            {
+                "name": "isMaxTag",
+                "value": false
+            },
+            {
+                "name": "disableWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "displayValue",
+        "id": "displayValue6",
+        "properties": [
+            {
+                "name": "tag",
+                "value": "S7_1500_MW2"
+            },
+            {
+                "name": "format",
+                "value": "1"
+            },
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "id": "text7",
+        "properties": [
+            {
+                "name": "hiddenWhen",
+                "value": ""
+            }
+        ]
+    }
+]

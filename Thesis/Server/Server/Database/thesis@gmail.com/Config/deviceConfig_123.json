@@ -1,0 +1,41 @@
+{
+    "deviceName": "aaa",
+    "deviceID": "123",
+    "longitude": "",
+    "latitude": "",
+    "period": 5000,
+    "PLCs": [
+        {
+            "name": "aaa",
+            "protocol": "S7-connection",
+            "ipAddress": "192.168.1.150",
+            "variables": [
+                {
+                    "name": "Led",
+                    "dataType": "Bool",
+                    "plc": "aaa",
+                    "address": "M0.0",
+                    "access": "read",
+                    "unit": "",
+                    "isAlarm": true,
+                    "alarmType": "0",
+                    "parameters": {
+                        "lolo": "",
+                        "lo": "",
+                        "hi": "",
+                        "hihi": "",
+                        "deadband": ""
+                    },
+                    "isHistory": false
+                }
+            ]
+        }
+    ],
+    "user": "thesis@gmail.com",
+    "creationTime": "2019-06-04 14:56:15",
+    "lastActive": "",
+    "published": true,
+    "status": false,
+    "fileName": "deviceConfig_123.json",
+    "link": "/published/thesis@gmail.com/Device_123_publish.ejs"
+}
